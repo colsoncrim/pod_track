@@ -1,35 +1,37 @@
 import React from 'react';
-import '../styles/Navbar.css';
-import { useState } from 'react';
+import { Flex, Button,  HStack, Link } from '@chakra-ui/react';
+import MobileNavDrawer from "./MobileNavDrawer"
 // import { Link } from 'react-router-dom';
 
+const CTA = "Get Started";
 function Navbar() {
-    const [isNavExpanded, setIsNavExpanded] = useState(false);
 
     return (
         <>
-        <nav className='top-nav'>
-            <a href='/' className='app-logo'>PodTrack</a>
-            <button className='hamburger' onClick={() => { setIsNavExpanded(!isNavExpanded)}}>
-                <i className="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            <div className={ isNavExpanded ? 'right-nav expanded' : 'right-nav'}>
-                <ul>
-                    <li>
-                        <a href='/search'>Sign In</a>
-                    </li>
-                    <li>
-                        <a href='/browse'>Browse</a>
-                    </li>
-                    <li>
-                        <a href='/mylist'>My List</a>
-                    </li>
-                    <li>
-                        <a href='/genres'>Genres</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+            <Flex
+                w="100%"
+                px="6"
+                py="5"
+                align="center"
+                justify="space-between"
+            >
+                <Link href='/'>PodTrack</Link>
+                <HStack as="nav" spacing="5" display={{ base: "none", md: "flex" }}>
+                    <Link>
+                        <Button variant="nav">Shows</Button>
+                    </Link>
+                    <Link>
+                        <Button variant="nav">Episodes</Button>
+                    </Link>
+                    <Link>
+                        <Button variant="nav">FAQ's</Button>
+                    </Link>
+                </HStack>
+                <HStack>
+                    <Button>{CTA}</Button>
+                    <MobileNavDrawer />
+                </HStack>
+            </Flex>
         </>
     )
 }
