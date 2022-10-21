@@ -1,19 +1,9 @@
 import React from 'react';
-import { Flex, Box, Heading, Text, Input, Button, FormControl, FormLabel } from '@chakra-ui/react';
-// import '../styles/Login.css';
-// import { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Flex, Box, Heading, Text, Input, FormControl, FormLabel } from '@chakra-ui/react';
 
 const AUTH_URL = process.env.REACT_APP_AUTH_URL
 
 function Login() {
-    // const [email, setEmail] = useState();
-    // const [password, setPassword] = useState();
-    // const [error, setError] = useState("");
-
-    // const submit = async (e) => {
-    //     e.preventDefault();
-    // }
 
     return (
         <>
